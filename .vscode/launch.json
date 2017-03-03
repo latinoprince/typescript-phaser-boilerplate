@@ -1,0 +1,41 @@
+{
+	"version": "0.2.0",
+	// List of configurations. Add new configurations or edit existing ones.  
+	// ONLY "node" and "mono" are supported, change "type" to switch.
+	"configurations": [
+		{
+			// Name of configuration; appears in the launch configuration drop down menu.
+			"name": "Launch w/o Debugger",
+			"request": "launch",
+			// Type of configuration. Possible values: "node", "mono".
+			"type": "node",
+			// Workspace relative or absolute path to the program.
+			"program": "${workspaceRoot}/server/server.js",
+			// Automatically stop program after launch.
+			"stopOnEntry": false,
+			// Command line arguments passed to the program.
+			"args": [],
+			// Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
+			"cwd": "${workspaceRoot}",
+			// Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
+			"runtimeExecutable": null,
+			// Environment variables passed to the program.
+			"env": { },
+			// Use JavaScript source maps (if they exist).
+			"sourceMaps": true
+		}, 
+		{
+			// launch with debugger; that means, you need to start node from the Command
+			// line with chrome.exe --remote-debugging-port=9222 
+			// linux: google-chrome-stable --remote-debugging-port=9222
+			// you need to have chrome plugin installed in VS Code
+			// CTRL-P and type: ext install debugger-for-chrome
+			"name": "Launch index.html with sourcemaps",
+			"type": "chrome",
+			"request": "launch",
+			"url": "http://localhost:9000/index.html",
+			"sourceMaps": true,
+			"webRoot": "${workspaceRoot}/bin"
+		}
+	]
+}
